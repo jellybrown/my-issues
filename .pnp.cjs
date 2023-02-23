@@ -14746,6 +14746,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@svgr/webpack", "npm:5.5.0"],\
             ["@types/eslint", null],\
             ["@types/eslint-config-react-app", null],\
+            ["@types/prettier", null],\
             ["@types/react", "npm:18.0.28"],\
             ["@types/typescript", null],\
             ["babel-jest", "virtual:92a44c503221bf997238bc96f2413e7d4b5c89c89f4b037d01d433ca863dce031f0293691fe312ae5d5c40cc5baee98db5969ee8003bd0eb872020ae4a61590f#npm:27.5.1"],\
@@ -14777,6 +14778,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["postcss-loader", "virtual:92a44c503221bf997238bc96f2413e7d4b5c89c89f4b037d01d433ca863dce031f0293691fe312ae5d5c40cc5baee98db5969ee8003bd0eb872020ae4a61590f#npm:6.2.1"],\
             ["postcss-normalize", "virtual:92a44c503221bf997238bc96f2413e7d4b5c89c89f4b037d01d433ca863dce031f0293691fe312ae5d5c40cc5baee98db5969ee8003bd0eb872020ae4a61590f#npm:10.0.1"],\
             ["postcss-preset-env", "virtual:92a44c503221bf997238bc96f2413e7d4b5c89c89f4b037d01d433ca863dce031f0293691fe312ae5d5c40cc5baee98db5969ee8003bd0eb872020ae4a61590f#npm:7.8.3"],\
+            ["prettier", null],\
             ["prompts", "npm:2.4.2"],\
             ["react", "npm:18.2.0"],\
             ["react-app-polyfill", "npm:3.0.0"],\
@@ -14799,9 +14801,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packagePeers": [\
             "@types/eslint-config-react-app",\
             "@types/eslint",\
+            "@types/prettier",\
             "@types/react",\
             "@types/typescript",\
             "eslint-config-react-app",\
+            "prettier",\
             "react",\
             "typescript"\
           ],\
