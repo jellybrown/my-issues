@@ -10,7 +10,17 @@ module.exports = {
       '3xl': '2rem',
       '4xl': '2.4rem',
     },
-    extend: {},
+    extend: {
+      colors: {
+        primary: '#468aff',
+        'gray-light': '#E8E8E8',
+        'gray-light-2': '#F5F5F5',
+        'gray-light-3': '#B4B4B4',
+        'gray-light-4': '#F2F2F2',
+        'gray-deep': '#7A7A7A',
+        'gray-deep-2': '#C8C8C8',
+      },
+    },
   },
   plugins: [],
 };

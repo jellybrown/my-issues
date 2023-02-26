@@ -29,6 +29,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["@craco/craco", "virtual:6af95f38774959f2038f007ca11beeca7658a598ccaaa038bf308a95e862d77b351ecf86f1b72ebf7086e9d2b1bc686300744d41ad623cb3732ad82d6948919a#npm:7.0.0"],\
+            ["@heroicons/react", "virtual:6af95f38774959f2038f007ca11beeca7658a598ccaaa038bf308a95e862d77b351ecf86f1b72ebf7086e9d2b1bc686300744d41ad623cb3732ad82d6948919a#npm:2.0.16"],\
             ["@testing-library/jest-dom", "npm:5.16.5"],\
             ["@testing-library/react", "virtual:6af95f38774959f2038f007ca11beeca7658a598ccaaa038bf308a95e862d77b351ecf86f1b72ebf7086e9d2b1bc686300744d41ad623cb3732ad82d6948919a#npm:13.4.0"],\
             ["@testing-library/user-event", "virtual:6af95f38774959f2038f007ca11beeca7658a598ccaaa038bf308a95e862d77b351ecf86f1b72ebf7086e9d2b1bc686300744d41ad623cb3732ad82d6948919a#npm:13.5.0"],\
@@ -3277,6 +3278,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@gar-promisify-npm-1.1.3-ac1a325862-4059f790e2.zip/node_modules/@gar/promisify/",\
           "packageDependencies": [\
             ["@gar/promisify", "npm:1.1.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@heroicons/react", [\
+        ["npm:2.0.16", {\
+          "packageLocation": "./.yarn/cache/@heroicons-react-npm-2.0.16-ce9dfa3c94-1e51bfec72.zip/node_modules/@heroicons/react/",\
+          "packageDependencies": [\
+            ["@heroicons/react", "npm:2.0.16"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:6af95f38774959f2038f007ca11beeca7658a598ccaaa038bf308a95e862d77b351ecf86f1b72ebf7086e9d2b1bc686300744d41ad623cb3732ad82d6948919a#npm:2.0.16", {\
+          "packageLocation": "./.yarn/__virtual__/@heroicons-react-virtual-b1dec53e5c/0/cache/@heroicons-react-npm-2.0.16-ce9dfa3c94-1e51bfec72.zip/node_modules/@heroicons/react/",\
+          "packageDependencies": [\
+            ["@heroicons/react", "virtual:6af95f38774959f2038f007ca11beeca7658a598ccaaa038bf308a95e862d77b351ecf86f1b72ebf7086e9d2b1bc686300744d41ad623cb3732ad82d6948919a#npm:2.0.16"],\
+            ["@types/react", "npm:18.0.28"],\
+            ["react", "npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react",\
+            "react"\
           ],\
           "linkType": "HARD"\
         }]\
@@ -12149,6 +12172,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["my-issues", "workspace:."],\
             ["@craco/craco", "virtual:6af95f38774959f2038f007ca11beeca7658a598ccaaa038bf308a95e862d77b351ecf86f1b72ebf7086e9d2b1bc686300744d41ad623cb3732ad82d6948919a#npm:7.0.0"],\
+            ["@heroicons/react", "virtual:6af95f38774959f2038f007ca11beeca7658a598ccaaa038bf308a95e862d77b351ecf86f1b72ebf7086e9d2b1bc686300744d41ad623cb3732ad82d6948919a#npm:2.0.16"],\
             ["@testing-library/jest-dom", "npm:5.16.5"],\
             ["@testing-library/react", "virtual:6af95f38774959f2038f007ca11beeca7658a598ccaaa038bf308a95e862d77b351ecf86f1b72ebf7086e9d2b1bc686300744d41ad623cb3732ad82d6948919a#npm:13.4.0"],\
             ["@testing-library/user-event", "virtual:6af95f38774959f2038f007ca11beeca7658a598ccaaa038bf308a95e862d77b351ecf86f1b72ebf7086e9d2b1bc686300744d41ad623cb3732ad82d6948919a#npm:13.5.0"],\

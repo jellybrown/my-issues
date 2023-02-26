@@ -4,9 +4,9 @@ import { Header } from '@/components/layout/Header';
 
 export const Layout = () => {
   return (
-    <div>
+    <div className="h-screen flex flex-col">
       <Header />
-      <div className="p-10">
+      <div className="flex-1 p-10 bg-gray-light-2">
         <Outlet />
       </div>
     </div>
