@@ -2,9 +2,9 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { githubService } from '@/apis';
 import { extractRepos } from '@/utils';
-import type { Repo } from '@/components/repositories';
 import { RepositoryCard } from '@/components/repositories';
 import { useRepository } from '@/context/repository/RepositoryContext';
+import type { Repo } from '@/components/repositories';
 
 export const Repositories = () => {
   const [searchParams] = useSearchParams();
@@ -19,10 +19,7 @@ export const Repositories = () => {
 
   useEffect(() => {
     const keyword = searchParams.get('q');
-
-    if (keyword) {
-      searchGithubRepos(keyword);
-    }
+    keyword ? searchGithubRepos(keyword) : setRepos(savedRepos);
   }, [searchGithubRepos, searchParams]);
 
   const onToggleRepo = (repo: Repo) => {

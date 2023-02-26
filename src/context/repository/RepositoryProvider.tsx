@@ -11,6 +11,9 @@ export const RepositoryProvider = ({ children }: { children: ReactNode }) => {
   }, [repositories]);
 
   const saveRepo = (repo: Repo) => {
+    if (repositories.length === 4) {
+      return window.confirm('저장소는 4개만 저장이 가능합니다. 삭제 후 다시 시도해주세요.');
+    }
     setRepositories(prev => [...prev, repo]);
   };
 
