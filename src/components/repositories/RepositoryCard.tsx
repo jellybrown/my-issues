@@ -2,6 +2,7 @@ import React from 'react';
 import type { Repo } from '@/components/repositories/types';
 import { HeartIcon } from '@heroicons/react/24/outline';
 import { HeartIcon as FilledHeartIcon } from '@heroicons/react/24/solid';
+import { Card } from '@Shared/Card';
 
 type Props = {
   repo: Repo;
@@ -11,7 +12,7 @@ type Props = {
 
 export const RepositoryCard = ({ repo, isSaved, onToggleRepo }: Props) => {
   return (
-    <div className="flex justify-between p-10 m-5 bg-white border rounded rounded-xl">
+    <Card>
       <div>
         <h2 className="text-sm font-bold">{repo.full_name}</h2>
       </div>
@@ -22,6 +23,6 @@ export const RepositoryCard = ({ repo, isSaved, onToggleRepo }: Props) => {
           <HeartIcon className="stroke-primary" />
         )}
       </button>
-    </div>
+    </Card>
   );
 };
