@@ -11,3 +11,7 @@ export const requestPromises = async (promises: Promise<any>[]) => {
   });
   return data;
 };
+
+export const convertDateKr = (date: string) => {
+  return new Date(date).toLocaleString('KO-KR');
+};

@@ -6,4 +6,6 @@ export type Repo = {
   language: string;
   created_at: string;
   updated_at: string;
+  created_by: string;
+  avatar_url: string;
 };

@@ -1,4 +1,5 @@
 import { Issue, User } from '@/components/issues/types';
+import { convertDateKr } from '@/utils';
 
 const extractOwnerAndRepo = (url: string) => {
   const githubOwnerAndRepoRegex = /https:\/\/github.com\/([\w-]+)\/([\w-]+)/;
@@ -29,7 +30,7 @@ export const extractIssues = (issueData: { [key: string]: any }[]): Issue[] => {
         title,
         state,
         assignees: assigneesObj,
-        created_at: created_at,
+        created_at: convertDateKr(created_at),
         created_by: user?.login,
         ...extractOwnerAndRepo(html_url),
       };

@@ -39,7 +39,7 @@ const MENUS = [
   },
   {
     name: '저장소',
-    path: PATH.Repositories,
+    path: PATH.Favorites,
   },
 ];
 

@@ -39,7 +39,7 @@ export const Issues = () => {
     getAndUpdateIssues();
   }, [repositories]);
 
-  if (!repositories?.length || !issues?.length) {
+  if ((!repositories?.length && !issues?.length) || !issues?.length) {
     return (
       <div className="mt-36">
         <TextField text={'저장된 레포가 없어서 이슈를 불러올 수 없어요!'} />
