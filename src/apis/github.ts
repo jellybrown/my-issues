@@ -18,15 +18,15 @@ class GithubService {
     owner,
     repo,
     state,
+    page,
   }: {
     owner: string;
     repo: string;
     state: IssueState | 'all';
+    page: number;
   }) {
-    const ISSUE_API =
-      state === 'all'
-        ? `${this.client}/repos/${owner}/${repo}/issues`
-        : `${this.client}/repos/${owner}/${repo}/issues?state=${state}`;
+    const BASE_ISSUE_API = `${this.client}/repos/${owner}/${repo}/issues?page=${page}`;
+    const ISSUE_API = state === 'all' ? BASE_ISSUE_API : `${BASE_ISSUE_API}&state=${state}`;
 
     const { data } = await axios.get(ISSUE_API);
     return data;
