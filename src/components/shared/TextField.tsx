@@ -6,5 +6,5 @@ type Props = {
 };
 
 export const TextField = ({ text, position = 'center' }: Props) => {
-  return <div className={`text-base flex justify-${position}`}>{text}</div>;
+  return <div className={`text-base text-slate-400 flex justify-${position}`}>{text}</div>;
 };

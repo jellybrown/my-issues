@@ -9,8 +9,13 @@ type Props = {
 
 export const Menu = ({ name, path, active }: Props) => {
   return (
-    <li className="w-25">
-      <Link className={`${active && MENU_STYLE.active} text-base`} to={path}>
+    <li className="flex items-center">
+      <Link
+        className={`${
+          active ? MENU_STYLE.active : MENU_STYLE.inactive
+        } flex items-center justify-center text-base inline-block w-[4rem]`}
+        to={path}
+      >
         {name}
       </Link>
     </li>
@@ -18,5 +23,6 @@ export const Menu = ({ name, path, active }: Props) => {
 };
 
 const MENU_STYLE = {
-  active: 'font-bold',
+  active: 'font-medium text-slate-300',
+  inactive: 'text-slate-400',
 };

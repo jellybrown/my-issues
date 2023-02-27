@@ -15,7 +15,7 @@ export const RepositoryCard = ({ repo, isSaved, onToggleRepo }: Props) => {
     <Card>
       <div className="w-full mr-10">
         <div className="flex items-center w-full">
-          <h2 className="text-base font-bold">{repo.full_name}</h2>
+          <h2 className="text-xl font-bold">{repo.full_name}</h2>
           <span className="text-sm ml-5 text-gray-light-3">{repo.language}</span>
         </div>
 

@@ -16,4 +16,5 @@ export type Issue = {
   created_by: string;
   owner: string;
   repo: string;
+  commentCount: number;
 };

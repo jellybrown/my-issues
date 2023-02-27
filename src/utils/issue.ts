@@ -14,7 +14,7 @@ const extractOwnerAndRepo = (url: string) => {
 export const extractIssues = (issueData: { [key: string]: any }[]): Issue[] => {
   const issues = issueData
     .map(issue => {
-      const { id, html_url, title, state, assignees, user, created_at } = issue;
+      const { id, html_url, title, state, assignees, user, created_at, comments } = issue;
       const assigneesObj: User[] =
         assignees && assignees.length > 0
           ? assignees.map((u: Record<string, any>) => ({
@@ -32,6 +32,7 @@ export const extractIssues = (issueData: { [key: string]: any }[]): Issue[] => {
         assignees: assigneesObj,
         created_at: convertDateKr(created_at),
         created_by: user?.login,
+        commentCount: comments,
         ...extractOwnerAndRepo(html_url),
       };
       return item;

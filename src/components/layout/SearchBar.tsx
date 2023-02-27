@@ -1,10 +1,15 @@
-import React, { ChangeEvent, useEffect, useState } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import { Input } from '@Shared/Input';
-import { Button } from '@Shared/Button';
 import { useNavigate } from 'react-router-dom';
 import { PATH } from '@/constants';
+import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 
-export const SearchBar = () => {
+type Props = {
+  isActive: boolean;
+  onToggleActive: () => void;
+};
+
+export const SearchBar = ({ isActive, onToggleActive }: Props) => {
   const [keyword, setKeyword] = useState<string>('');
   const navigate = useNavigate();
 
@@ -12,14 +17,28 @@ export const SearchBar = () => {
     setKeyword(e.target.value);
   };
 
-  const onSearchKeyword = () => {
+  const handleSearchKeyword = () => {
     navigate(`${PATH.Repositories}?q=${keyword}`);
   };
 
+  const onSearchKeyword = () => {
+    keyword.length < 1 ? onToggleActive() : handleSearchKeyword();
+  };
+
   return (
-    <div>
-      <Input placeholder={'저장소 검색...'} value={keyword} onChangeInput={handleChangeKeyword} />
-      <Button text={'검색'} onClickBtn={onSearchKeyword} />
+    <div className="flex items-center h-[4rem]">
+      <div className="flex-1 mr-5">
+        {isActive && (
+          <Input
+            placeholder={'저장소 검색...'}
+            value={keyword}
+            onChangeInput={handleChangeKeyword}
+          />
+        )}
+      </div>
+      <button className="w-7 h-7" onClick={onSearchKeyword}>
+        <MagnifyingGlassIcon className="text-slate-400 " />
+      </button>
     </div>
   );
 };

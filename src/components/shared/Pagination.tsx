@@ -16,7 +16,7 @@ export const Pagination = ({ length, limit, currPage, updateCurrPage }: Props) =
         <li className="p-3" key={`page-${i}`}>
           <button
             className={`${
-              currPage === i + 1 && PAGE_STYLE.active
+              currPage === i + 1 ? PAGE_STYLE.active : PAGE_STYLE.inactive
             } text-base py-2 px-5 rounded rounded-full`}
             onClick={() => updateCurrPage(i + 1)}
           >
@@ -29,5 +29,6 @@ export const Pagination = ({ length, limit, currPage, updateCurrPage }: Props) =
 };
 
 const PAGE_STYLE = {
-  active: 'bg-primary text-white',
+  active: 'bg-slate-400',
+  inactive: 'text-slate-400',
 };
