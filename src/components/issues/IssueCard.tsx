@@ -12,6 +12,7 @@ export const IssueCard = ({ issue }: Props) => {
     <Link to={issue.html_url} target="_blank">
       <Card className="hover:bg-gray-light">
         <div className="truncate">
+          <span>{`${issue.owner}/${issue.repo}`}</span>
           <h2 className="text-sm font-medium">{issue.title}</h2>
           <span>{issue.created_by}</span>
         </div>

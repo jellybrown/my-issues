@@ -14,4 +14,6 @@ export type Issue = {
   assignees: User[];
   created_at: string;
   created_by: string;
+  owner: string;
+  repo: string;
 };
