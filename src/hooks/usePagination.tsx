@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 
 type Props = {
@@ -16,7 +16,7 @@ export const usePagination = ({ path, initialPage }: Props) => {
     if (page) {
       setCurrPage(Number(page));
     }
-  }, [searchParams.get('page')]);
+  }, [searchParams]);
 
   const updateCurrPage = (page: number) => {
     let PATH = `${path}?`;

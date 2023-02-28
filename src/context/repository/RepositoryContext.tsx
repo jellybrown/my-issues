@@ -1,4 +1,4 @@
-import React, { createContext, useContext } from 'react';
+import { createContext, useContext } from 'react';
 import type { Repo } from '@/components/repositories';
 
 type RepoContext = {

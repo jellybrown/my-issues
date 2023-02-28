@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { IssueState } from '@/components/issues/types';
 import { ISSUE_STATE, PATH } from '@/constants';
@@ -13,7 +13,7 @@ export const useIssueFilter = () => {
     if (state) {
       setCurrIssueState(state as IssueState);
     }
-  }, [searchParams.get('state')]);
+  }, [searchParams]);
 
   const updateIssueFilter = (state: IssueState) => {
     navigate(`${PATH.Issues}?state=${state}&page=1`);

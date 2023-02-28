@@ -20,7 +20,7 @@ export const Repositories = () => {
   useEffect(() => {
     const keyword = searchParams.get('q');
     keyword ? searchGithubRepos(keyword) : setRepos(savedRepos);
-  }, [searchGithubRepos, searchParams]);
+  }, [searchGithubRepos, searchParams, savedRepos]);
 
   const onToggleRepo = (repo: Repo) => {
     const isSaved = isSavedRepo(repo.id);

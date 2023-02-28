@@ -28,7 +28,7 @@ export const Issues = () => {
       const issue = extractIssues(data);
       return issue;
     },
-    [repositories]
+    [repositories, currPage]
   );
 
   useEffect(() => {
@@ -41,7 +41,7 @@ export const Issues = () => {
       setIssues(issues!);
     };
     getAndUpdateIssues();
-  }, [repositories, currIssueState]);
+  }, [repositories, currIssueState, getIssues]);
 
   if (!repositories?.length) {
     return (

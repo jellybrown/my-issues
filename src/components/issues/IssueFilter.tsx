@@ -18,6 +18,7 @@ export const IssueFilter = ({ currIssueState, updateIssueFilter }: Props) => {
     <div className="mx-10 flex justify-end gap-5">
       {ISSUE_STATE_FILTER.map(state => (
         <button
+          key={`issue-state-${state.value}`}
           className={`py-2 px-5 text-sm rounded ease-out duration-200 ${
             currIssueState === state.value ? ISSUE_STATE_STYLE.Active : ISSUE_STATE_STYLE.Inactive
           }`}
