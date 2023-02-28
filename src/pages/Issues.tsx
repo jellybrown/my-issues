@@ -1,12 +1,12 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { githubService } from '@/apis';
-import { extractIssues, requestPromises } from '@/utils';
-import { useRepository } from '@/context/repository/RepositoryContext';
 import type { Issue, IssueState } from '@/components/issues/types';
-import { PATH } from '@/constants';
 import { IssueCard, IssueFilter } from '@/components/issues';
 import { TextField, Pagination } from '@/components/shared';
+import { useRepository } from '@/context/repository/RepositoryContext';
+import { PATH } from '@/constants';
 import { usePagination, useIssueFilter } from '@/hooks';
+import { extractIssues, requestPromises } from '@/utils';
 
 export const Issues = () => {
   const [issues, setIssues] = useState<Issue[] | null>(null);

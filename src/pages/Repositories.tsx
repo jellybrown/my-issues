@@ -1,10 +1,10 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { githubService } from '@/apis';
-import { extractRepos } from '@/utils';
 import { RepositoryCard } from '@/components/repositories';
-import { useRepository } from '@/context/repository/RepositoryContext';
 import type { Repo } from '@/components/repositories';
+import { useRepository } from '@/context/repository/RepositoryContext';
+import { extractRepos } from '@/utils';
 
 export const Repositories = () => {
   const [searchParams] = useSearchParams();

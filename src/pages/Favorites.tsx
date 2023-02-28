@@ -1,7 +1,7 @@
 import React from 'react';
 import { RepositoryCard } from '@/components/repositories';
+import { TextField } from '@/components/shared';
 import { useRepository } from '@/context/repository/RepositoryContext';
-import { TextField } from '@Shared/TextField';
 
 export const Favorites = () => {
   const { repositories: savedRepos, deleteRepo } = useRepository();

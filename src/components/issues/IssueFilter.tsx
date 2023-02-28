@@ -1,6 +1,6 @@
 import React, { MouseEvent } from 'react';
+import type { IssueState } from '@/components/issues/types';
 import { ISSUE_STATE } from '@/constants';
-import { IssueState } from '@/components/issues/types';
 
 type Props = {
   currIssueState: IssueState;

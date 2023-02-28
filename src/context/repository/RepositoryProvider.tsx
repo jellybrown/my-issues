@@ -1,7 +1,7 @@
 import React, { ReactNode, useEffect, useState } from 'react';
+import { Repo } from '@/components/repositories';
 import { RepositoryContext } from '@/context/repository/RepositoryContext';
 import { repoStorage } from '@/utils';
-import { Repo } from '@/components/repositories';
 
 export const RepositoryProvider = ({ children }: { children: ReactNode }) => {
   const [repositories, setRepositories] = useState<Repo[]>([]);

@@ -1,9 +1,9 @@
 import { createBrowserRouter, createRoutesFromElements, Navigate, Route } from 'react-router-dom';
 import { Layout } from '@/components/layout';
+import { PATH } from '@/constants';
 import { Issues } from '@/pages/Issues';
 import { Repositories } from '@/pages/Repositories';
 import { Favorites } from '@/pages/Favorites';
-import { PATH } from '@/constants';
 
 export const router = createBrowserRouter(
   createRoutesFromElements(

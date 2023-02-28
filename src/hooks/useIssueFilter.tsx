@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { ISSUE_STATE, PATH } from '@/constants';
-import { IssueState } from '@/components/issues/types';
 import { useNavigate, useSearchParams } from 'react-router-dom';
+import { IssueState } from '@/components/issues/types';
+import { ISSUE_STATE, PATH } from '@/constants';
 
 export const useIssueFilter = () => {
   const navigate = useNavigate();
