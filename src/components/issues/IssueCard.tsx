@@ -1,7 +1,8 @@
 import React from 'react';
-import { Card } from '@Shared/Card';
-import { Issue } from '@/components/issues/types';
 import { Link } from 'react-router-dom';
+import { Card } from '@/components/shared';
+import { Issue } from '@/components/issues/types';
+import { ISSUE_STATE } from '@/constants';
 import { ChatBubbleOvalLeftIcon } from '@heroicons/react/24/outline';
 
 type Props = {
@@ -13,7 +14,14 @@ export const IssueCard = ({ issue }: Props) => {
     <Link to={issue.html_url} target="_blank">
       <Card>
         <div className="truncate">
-          <h2 className="text-xl font-bold mb-5">{issue.title}</h2>
+          <div className="flex items-center mb-5">
+            <div
+              className={`w-5 h-5 rounded rounded-full ${
+                issue.state === ISSUE_STATE.Open ? 'bg-green' : 'bg-red'
+              }`}
+            />
+            <h2 className="text-xl font-bold ml-5">{issue.title}</h2>
+          </div>
           <div className="flex items-center h-8">
             {issue.commentCount > 0 && (
               <>

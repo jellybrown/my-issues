@@ -2,16 +2,17 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { githubService } from '@/apis';
 import { extractIssues, requestPromises } from '@/utils';
 import { useRepository } from '@/context/repository/RepositoryContext';
-import { Issue, IssueState } from '@/components/issues/types';
-import { ISSUE_STATE, PATH } from '@/constants';
-import { IssueCard } from '@/components/issues';
-import { TextField } from '@Shared/TextField';
-import { Pagination } from '@Shared/Pagination';
-import { usePagination } from '@/hooks';
+import type { Issue, IssueState } from '@/components/issues/types';
+import { PATH } from '@/constants';
+import { IssueCard, IssueFilter } from '@/components/issues';
+import { TextField, Pagination } from '@/components/shared';
+import { usePagination, useIssueFilter } from '@/hooks';
 
 export const Issues = () => {
   const [issues, setIssues] = useState<Issue[] | null>(null);
+
   const { repositories } = useRepository();
+  const { currIssueState, updateIssueFilter } = useIssueFilter();
   const { currPage, updateCurrPage } = usePagination({ path: PATH.Issues, initialPage: 1 });
 
   const getIssues = useCallback(
@@ -36,11 +37,11 @@ export const Issues = () => {
     }
 
     const getAndUpdateIssues = async () => {
-      const issues = await getIssues(ISSUE_STATE.Open);
+      const issues = await getIssues(currIssueState);
       setIssues(issues!);
     };
     getAndUpdateIssues();
-  }, [repositories]);
+  }, [repositories, currIssueState]);
 
   if (!repositories?.length) {
     return (
@@ -52,6 +53,7 @@ export const Issues = () => {
 
   return (
     <div>
+      <IssueFilter currIssueState={currIssueState} updateIssueFilter={updateIssueFilter} />
       {issues && issues.length > 0 ? (
         renderIssues(issues, currPage)?.map((issue, idx) => (
           <IssueCard key={`issue-${idx}`} issue={issue} />
@@ -61,7 +63,6 @@ export const Issues = () => {
           <TextField text={'내 저장소에 등록된 이슈가 없네요!'} />
         </div>
       )}
-
       <Pagination
         length={issues?.length || 0}
         limit={LIMIT}

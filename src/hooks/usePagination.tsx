@@ -19,7 +19,12 @@ export const usePagination = ({ path, initialPage }: Props) => {
   }, [searchParams.get('page')]);
 
   const updateCurrPage = (page: number) => {
-    navigate(`${path}?page=${page}`);
+    let PATH = `${path}?`;
+    const state = searchParams.get('state');
+    if (state) {
+      PATH = `${path}?state=${state}&`;
+    }
+    navigate(`${PATH}page=${page}`);
   };
 
   return { currPage, updateCurrPage };

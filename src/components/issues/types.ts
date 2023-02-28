@@ -4,13 +4,13 @@ export type User = {
   avatar_url: string;
 };
 
-export type IssueState = 'open' | 'closed';
+export type IssueState = 'all' | 'open' | 'closed';
 
 export type Issue = {
   id: number;
   html_url: string;
   title: string;
-  state: IssueState;
+  state: Exclude<IssueState, 'all'>;
   assignees: User[];
   created_at: string;
   created_by: string;

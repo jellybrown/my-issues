@@ -19,6 +19,8 @@ module.exports = {
         'gray-light-4': '#F2F2F2',
         'gray-deep': '#7A7A7A',
         'gray-deep-2': '#C8C8C8',
+        green: '#60BBA7',
+        red: '#E46A6A',
       },
     },
   },
