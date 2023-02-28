@@ -22,7 +22,7 @@ class GithubService {
   }: {
     owner: string;
     repo: string;
-    state: IssueState | 'all';
+    state: IssueState;
     page: number;
   }) {
     const BASE_ISSUE_API = `${this.client}/repos/${owner}/${repo}/issues?page=${page}`;
