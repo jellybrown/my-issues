@@ -7,7 +7,16 @@ export const RepositoryProvider = ({ children }: { children: ReactNode }) => {
   const [repositories, setRepositories] = useState<Repo[]>([]);
 
   useEffect(() => {
-    repoStorage.saveAll(repositories);
+    const savedRepos = repoStorage.getAll() as Repo[] | null;
+    if (savedRepos && savedRepos.length > 0) {
+      setRepositories(savedRepos);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (repositories.length > 0) {
+      repoStorage.saveAll(repositories);
+    }
   }, [repositories]);
 
   const saveRepo = (repo: Repo) => {

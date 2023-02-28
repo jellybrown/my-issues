@@ -14,18 +14,21 @@ export const Issues = () => {
   const { repositories } = useRepository();
   const { currPage, updateCurrPage } = usePagination({ path: PATH.Issues, initialPage: 1 });
 
-  const getIssues = useCallback(async (state: IssueState | 'all') => {
-    if (!repositories) return;
+  const getIssues = useCallback(
+    async (state: IssueState | 'all') => {
+      if (!repositories) return;
 
-    const issueApis = repositories?.map(r => {
-      const [owner, repo] = r.full_name.split('/');
-      return githubService.getIssue({ owner, repo, state, page: currPage });
-    });
+      const issueApis = repositories?.map(r => {
+        const [owner, repo] = r.full_name.split('/');
+        return githubService.getIssue({ owner, repo, state, page: currPage });
+      });
 
-    const data = await requestPromises(issueApis || []);
-    const issue = extractIssues(data);
-    return issue;
-  }, []);
+      const data = await requestPromises(issueApis || []);
+      const issue = extractIssues(data);
+      return issue;
+    },
+    [repositories]
+  );
 
   useEffect(() => {
     if (!repositories?.length) {
@@ -39,7 +42,7 @@ export const Issues = () => {
     getAndUpdateIssues();
   }, [repositories]);
 
-  if ((!repositories?.length && !issues?.length) || !issues?.length) {
+  if (!repositories?.length) {
     return (
       <div className="mt-36">
         <TextField text={'저장된 레포가 없어서 이슈를 불러올 수 없어요!'} />
@@ -49,11 +52,18 @@ export const Issues = () => {
 
   return (
     <div>
-      {renderIssues(issues, currPage)?.map((issue, idx) => (
-        <IssueCard key={`issue-${idx}`} issue={issue} />
-      ))}
+      {issues && issues.length > 0 ? (
+        renderIssues(issues, currPage)?.map((issue, idx) => (
+          <IssueCard key={`issue-${idx}`} issue={issue} />
+        ))
+      ) : (
+        <div className="mt-36">
+          <TextField text={'내 저장소에 등록된 이슈가 없네요!'} />
+        </div>
+      )}
+
       <Pagination
-        length={issues.length}
+        length={issues?.length || 0}
         limit={LIMIT}
         currPage={currPage}
         updateCurrPage={updateCurrPage}
