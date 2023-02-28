@@ -26,19 +26,26 @@ export const SearchBar = ({ isActive, onToggleActive }: Props) => {
   };
 
   return (
-    <div className="flex items-center h-[4rem]">
-      <div className="flex-1 mr-5">
-        {isActive && (
-          <Input
-            placeholder={'저장소 검색...'}
-            value={keyword}
-            onChangeInput={handleChangeKeyword}
-          />
-        )}
+    <div className="flex justify-end items-center h-[4rem]">
+      <div
+        className={`max-w-4xl flex-1 mr-5 ease-in duration-300 origin-right ${
+          isActive ? INPUT_STYLE.active : INPUT_STYLE.inactive
+        }`}
+      >
+        <Input placeholder={'저장소 검색...'} value={keyword} onChangeInput={handleChangeKeyword} />
       </div>
-      <button className="w-7 h-7" onClick={onSearchKeyword}>
-        <MagnifyingGlassIcon className="text-slate-400 " />
+      <button className="w-10 h-10" onClick={onSearchKeyword}>
+        <MagnifyingGlassIcon
+          className={`text-slate-400 ease-in duration-300 ${
+            isActive ? 'opacity-1' : 'opacity-50'
+          } `}
+        />
       </button>
     </div>
   );
+};
+
+const INPUT_STYLE = {
+  active: 'scale-x-100 opacity-100',
+  inactive: 'scale-x-50 opacity-0',
 };

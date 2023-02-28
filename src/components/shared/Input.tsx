@@ -9,7 +9,7 @@ type Props = {
 export const Input = ({ placeholder, value, onChangeInput }: Props) => {
   return (
     <input
-      className="w-full py-3 px-5 text-base bg-slate-700 rounded rounded-xl focus:outline-none focus:ring focus:ring-slate-400 placeholder-slate-400 text-slate-400"
+      className="w-full py-4 px-6 text-base bg-slate-700 rounded rounded-xl focus:outline-none focus:ring focus:ring-slate-400 placeholder-slate-400 text-slate-400"
       placeholder={placeholder}
       value={value}
       onChange={onChangeInput}
